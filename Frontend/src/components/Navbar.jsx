@@ -10,7 +10,7 @@ function Logo() {
         </svg>
       </div>
       <div>
-        <div className="text-base font-semibold text-white leading-tight">Prompt2Video</div>
+        <div className="text-base font-semibold text-white leading-tight">Vidora</div>
         <div className="text-xs text-slate-300 -mt-0.5">nostalgic AI clips</div>
       </div>
     </div>

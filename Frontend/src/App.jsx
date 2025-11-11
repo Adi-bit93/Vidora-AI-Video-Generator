@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Footer from './components/Footer'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -29,11 +32,11 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen antialiased">
       <div id="__grain" aria-hidden="true" className=""></div>
-      {/* <Navbar theme={theme} setTheme={setTheme} />
+      <Navbar theme={theme} setTheme={setTheme} />
       <main className="flex-grow">
         <Home />
       </main>
-      <Footer /> */}
+      <Footer />
     </div>
   )
 }
