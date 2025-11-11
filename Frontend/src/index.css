@@ -15,8 +15,9 @@ code, kbd, pre {
 
 /* Soft background + subtle grain for nostalgia */
 body {
-  @apply bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100;
+  /* Replace Tailwind @apply with explicit CSS to avoid "Unknown at rule @apply" */
   background-image: linear-gradient(180deg, rgba(8,10,20,0.82), rgba(12,14,22,0.82));
+  color: #f1f5f9;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

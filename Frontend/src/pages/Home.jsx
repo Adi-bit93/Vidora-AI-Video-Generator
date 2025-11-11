@@ -38,7 +38,7 @@ export default function Home() {
                                     if (!prompt) setPrompt(example);
                                     alert("Generate clicked — backend integration coming next week.");
                                 }}
-                                className="bg-gradient-to-r from-indigo-500 to-violet-500 px-4 py-3 rounded-md text-white font-semibold hover:from-indigo-600 hover:to-violet-600 transition"
+                                className="bg-linear-to-r from-indigo-500 to-violet-500 px-4 py-3 rounded-md text-white font-semibold hover:from-indigo-600 hover:to-violet-600 transition"
                                 aria-label="Generate video"
                             >
                                 Generate
@@ -49,15 +49,15 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                
+
                 {/* Right: visual mock / preview card */}
                 <div>
                     <div className="relative rounded-xl overflow-hidden glass p-4">
-                        <div className="aspect-[16/9] bg-gradient-to-br from-slate-800/60 to-slate-700/40 rounded-md flex items-center justify-center">
+                        <div className="aspect-video bg-linear-to-br from-slate-800/60 to-slate-700/40 rounded-md flex items-center justify-center">
                             {/* placeholder video / mock */}
                             <div className="text-center">
                                 <div className="text-slate-200 font-medium mb-2">Preview</div>
-                                <div className="w-48 h-28 rounded-md bg-gradient-to-tr from-indigo-700 to-rose-500 opacity-20 flex items-center justify-center text-xs text-slate-100">
+                                <div className="w-48 h-28 rounded-md bg-linear-to-tr from-indigo-700 to-rose-500 opacity-20 flex items-center justify-center text-xs text-slate-100">
                                     <div>
                                         <div className="mb-1">Short clip</div>
                                         <div className="text-[10px] opacity-80">256×256 · 8s</div>

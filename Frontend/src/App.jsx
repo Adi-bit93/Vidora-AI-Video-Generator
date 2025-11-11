@@ -33,7 +33,7 @@ function App() {
     <div className="flex flex-col min-h-screen antialiased">
       <div id="__grain" aria-hidden="true" className=""></div>
       <Navbar theme={theme} setTheme={setTheme} />
-      <main className="flex-grow">
+      <main className="grow">
         <Home />
       </main>
       <Footer />

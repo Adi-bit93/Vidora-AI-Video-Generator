@@ -29,6 +29,7 @@ export default defineConfig({
             backgroundImage: {
               grain: 'radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px)',
               'retro-gradient': 'linear-gradient(120deg,#fde68a 0%, #fbcfe8 40%, #a7f3d0 100%)',
+              'linear-to-br': 'linear-gradient(135deg, var(--tw-gradient-stops))',
             },
             boxShadow: {
               'soft-lg': '0 8px 30px rgba(2,6,23,0.18)',
