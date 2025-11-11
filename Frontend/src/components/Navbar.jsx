@@ -1,5 +1,23 @@
 import React, { useState } from 'react'
 
+function Logo() {
+  return (
+    <div className="flex items-center space-x-3">
+      <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-rose-400 via-yellow-300 to-teal-300 shadow-soft-lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path d="M4 12h16" stroke="#0b1220" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M4 8h12" stroke="#0b1220" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <div className="text-base font-semibold text-white leading-tight">Prompt2Video</div>
+        <div className="text-xs text-slate-300 -mt-0.5">nostalgic AI clips</div>
+      </div>
+    </div>
+  );
+}
+
+
 function Navbar({ theme, setTheme }) {
     const [open, setOpen] = useState(false);
 
