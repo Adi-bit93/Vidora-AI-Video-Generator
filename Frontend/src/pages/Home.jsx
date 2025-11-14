@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Loader2 } from 'lucide-react';
 
 /**
  * Home.jsx
@@ -13,6 +14,18 @@ export default function Home() {
 
     const [generatedVideo, setGeneratedVideo] = useState(null)
     const [example, setExample] = useState("A cat playing piano at sunset")
+
+    const handleGenerate = () =>{
+        if(!prompt.trim()) setPrompt(example)
+
+        setLoading(true);
+        setGeneratedVideo(null);
+
+        setTimeout(() => {
+            setLoading(false);
+            setGeneratedVideo("/demo-video.mp4");
+        }, 2000);
+    }
 
     return (
         <section className='max-w-6xl x-auto px-4 py-12'>
@@ -36,11 +49,7 @@ export default function Home() {
                                 aria-label="Prompt for video generation"
                             />
                             <button
-                                onClick={() => {
-                                    // For Day 1 this is demo-only — later will call backend
-                                    if (!prompt) setPrompt(example);
-                                    alert("Generate clicked — backend integration coming next week.");
-                                }}
+                                onClick={handleGenerate}
                                 className="bg-linear-to-r from-indigo-500 to-violet-500 px-4 py-3 rounded-md text-white font-semibold hover:from-indigo-600 hover:to-violet-600 transition"
                                 aria-label="Generate video"
                             >
