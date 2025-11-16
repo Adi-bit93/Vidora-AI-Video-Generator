@@ -5,6 +5,8 @@ import Footer from './components/Footer'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Gallery from './pages/Gallery'
+import { BrowserRouter, Router, Routes, Route } from 'react-router-dom'
 
 function App() {
 
@@ -20,24 +22,37 @@ function App() {
     const root = document.documentElement;
     if (theme === 'dark') {
       root.classList.add("dark");
-    }else {
+    } else {
       root.classList.remove("dark");
     }
-    try { 
+    try {
       localStorage.setItem("theme", theme);
-    } catch{}
+    } catch { }
   }, [theme]);
 
   return (
-    <div className="flex flex-col min-h-screen antialiased">
-      <div id="__grain" aria-hidden="true" className=""></div>
-      <Navbar theme={theme} setTheme={setTheme} />
-      <main className="grow">
-        <Home />
-      </main>
-      <Footer />
-    </div>
-  )
+    <BrowserRouter>
+      
+        <div className="flex flex-col min-h-screen antialiased">
+
+          <div id="__grain" aria-hidden="true"></div>
+
+          {/* NOW inside Router → useNavigate works */}
+          <Navbar theme={theme} setTheme={setTheme} />
+
+          <main className="grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/gallery" element={<Gallery />} />
+            </Routes>
+          </main>
+
+          <Footer />
+
+        </div>
+      
+    </BrowserRouter>
+  );
 }
 
 export default App

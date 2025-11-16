@@ -1,25 +1,30 @@
 import React, { useState } from 'react'
+import {useNavigate} from 'react-router-dom';
+
+
 
 function Logo() {
-  return (
-    <div className="flex items-center space-x-3">
-      <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-linear-to-br from-rose-400 via-yellow-300 to-teal-300 shadow-soft-lg">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <path d="M4 12h16" stroke="#0b1220" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M4 8h12" stroke="#0b1220" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </div>
-      <div>
-        <div className="text-base font-semibold text-white leading-tight">Vidora</div>
-        <div className="text-xs text-slate-300 -mt-0.5">nostalgic AI clips</div>
-      </div>
-    </div>
-  );
+    return (
+        <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-linear-to-br from-rose-400 via-yellow-300 to-teal-300 shadow-soft-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M4 12h16" stroke="#0b1220" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M4 8h12" stroke="#0b1220" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+            </div>
+            <div>
+                <div className="text-base font-semibold text-white leading-tight">Vidora</div>
+                <div className="text-xs text-slate-300 -mt-0.5">nostalgic AI clips</div>
+            </div>
+        </div>
+    );
 }
 
 
 function Navbar({ theme, setTheme }) {
     const [open, setOpen] = useState(false);
+    
+    const navigate = useNavigate();
 
     return (
         <header className='sticky top-0 z-40  bg-transparent backdrop-blur-sm'>
@@ -30,7 +35,9 @@ function Navbar({ theme, setTheme }) {
                     </a>
                     <div className='hidden md:flex items-center gap-6'>
                         <a href="#" className='text-sm text-slate-200 hover:text-white'>Home</a>
-                        <a href="#gallery" className='text-sm text-slate-200 hover:text-white'>Gallery</a>
+                        <a
+                            onClick={() => navigate('/Gallery')}
+                            className='text-sm text-slate-200 hover:text-white'>Gallery</a>
                         <a href="#about" className='text-sm text-slate-200 hover:text-white'>About</a>
                         <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                             aria-label='Toggle theme'
