@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Footer from './components/Footer'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Gallery from './pages/Gallery'
+import About from './pages/About'
 import { BrowserRouter, Router, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -44,6 +43,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/gallery" element={<Gallery />} />
+              <Route path='/about' element={<About/>} />
             </Routes>
           </main>
 

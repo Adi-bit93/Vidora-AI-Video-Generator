@@ -5,9 +5,9 @@ export default function Gallery() {
     const demoClips = [
         "/videos/blog-1.mp4",
         "/videos/blog-2.mp4",
-        "/videos/blog-3.mp4",
+        "/videos/blog.mp4",
         "/videos/blog-4.mp4",
-        "/videos/demo5.mp4",
+        "/videos/blog-5.mp4",
         "/videos/demo6.mp4",
     ];
 

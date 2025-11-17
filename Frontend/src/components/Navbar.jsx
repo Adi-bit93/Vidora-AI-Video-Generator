@@ -34,11 +34,11 @@ function Navbar({ theme, setTheme }) {
                         <Logo />
                     </a>
                     <div className='hidden md:flex items-center gap-6'>
-                        <a href="#" className='text-sm text-slate-200 hover:text-white'>Home</a>
+                        <a href="/" className='text-sm text-slate-200 hover:text-white'>Home</a>
                         <a
                             onClick={() => navigate('/Gallery')}
-                            className='text-sm text-slate-200 hover:text-white'>Gallery</a>
-                        <a href="#about" className='text-sm text-slate-200 hover:text-white'>About</a>
+                            className='text-sm text-slate-200 hover:text-white hover:cursor-pointer'>Gallery</a>
+                        <a onClick={() => navigate("/about")} className='text-sm text-slate-200 hover:text-white hover:cursor-pointer'>About</a>
                         <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                             aria-label='Toggle theme'
                             className='ml-2 inline-flex items-center gap-2 rounded-lg px-3 py-2 bg-slate-800/40 hover:bg-slate-800/60 text-sm'>
