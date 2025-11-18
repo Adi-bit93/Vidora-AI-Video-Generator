@@ -41,6 +41,26 @@ code, kbd, pre {
   pointer-events: none;
 }
 
+.neon-btn {
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.neon-btn::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(circle, rgba(168,85,247,0.4), transparent);
+  transition: opacity 0.25s ease;
+}
+
+.neon-btn:hover::after {
+  opacity: 1;
+}
+
+
 
 
 /* Soft background + subtle grain for nostalgia */

@@ -2,8 +2,7 @@ import React from "react";
 
 function About() {
     return (
-        <div className="retro-grid">
-            <section className="max-w-6xl mx-auto  px-4 py-12 text-center ">
+            <section className="max-w-6xl retro-grid mx-auto  px-4 py-12 text-center ">
                 <h1 className="text-4xl sm:text-5xl nostalgic font-bold text-center mb-12 " >About Vidora</h1>
                 <p className="text-slate-300 text-center max-w-2xl mx-auto mb-12" >
                     Vidora is a nostalgic, lightweight AI video generator built entirely
@@ -19,7 +18,7 @@ function About() {
                         even from a normal laptop.</p>
                 </div>
                 <h2 className="text-3xl nostalgic font-bold text-center mb-8">How it Works</h2>
-                <div className="space-y-8">
+                <div className="space-y-8 ">
                     <div className="glass glow-hover p-6 rounded-xl shadow-soft-lg">
                         <h3 className="text-xl font-semibold text-white mb-2">1. User enters a prompt</h3>
                         <p className="text-slate-300">
@@ -51,7 +50,6 @@ function About() {
                     Made for creators, developers, dreamers - <span className="text-indigo-400">with nostalgic in every frame</span>
                 </div>
         </section >
-        </div>
     )
 }
 
