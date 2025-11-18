@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter, Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Footer from './components/Footer'
@@ -6,7 +7,7 @@ import './App.css'
 import Gallery from './pages/Gallery'
 import About from './pages/About'
 import Login from './pages/Login'
-import { BrowserRouter, Router, Routes, Route } from 'react-router-dom'
+import Signup from './pages/Signup'
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path='/login' element={<Login/>}/>
+              <Route path="/signup" element={<Signup/>}/>
               <Route path="/gallery" element={<Gallery />} />
               <Route path='/about' element={<About/>} />
             </Routes>
