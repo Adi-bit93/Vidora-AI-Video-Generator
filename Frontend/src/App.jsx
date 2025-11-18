@@ -8,6 +8,7 @@ import Gallery from './pages/Gallery'
 import About from './pages/About'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Player from './pages/Player'
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
               <Route path='/login' element={<Login/>}/>
               <Route path="/signup" element={<Signup/>}/>
               <Route path="/gallery" element={<Gallery />} />
+              <Route path='/player' element={<Player/>}/>
               <Route path='/about' element={<About/>} />
             </Routes>
           </main>

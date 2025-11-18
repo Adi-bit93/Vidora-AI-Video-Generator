@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function Gallery() {
+    const navigate = useNavigate()
 
     const demoClips = [
         "/videos/blog-1.mp4",
@@ -34,7 +36,9 @@ export default function Gallery() {
                             muted
                         />
                         <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center'>
-                            <button className='px-4 py-2 text-sm font-semibold text-white bg-indigo-600/80  rounded-lg hover:bg-indigo-700 transition'>
+                            <button 
+                                onClick={() => navigate("/player")}
+                                className='px-4 py-2 text-sm font-semibold text-white bg-indigo-600/80  rounded-lg hover:bg-indigo-700 transition'>
                              View Clip
                             </button>
                         </div>
