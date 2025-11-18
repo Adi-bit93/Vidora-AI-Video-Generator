@@ -5,14 +5,14 @@ export default function Gallery() {
     const demoClips = [
         "/videos/blog-1.mp4",
         "/videos/blog-2.mp4",
-        "/videos/blog.mp4",
+        "/videos/blog-7.mp4",
         "/videos/blog-4.mp4",
         "/videos/blog-5.mp4",
-        "/videos/demo6.mp4",
+        "/videos/blog-6.mp4",
     ];
 
     return (
-        <section className='max-w-7xl mx-auto px-4 py-12'>
+        <section className='max-w-7xl mx-auto px-4 py-12 text-center'>
             <h1 className='text-4xl sm:text-5xl nostalgic font-bold text-center mb-10'>
                 Explore Generated Clips
             </h1>

@@ -28,7 +28,7 @@ export default function Home() {
     }
 
     return (
-        <section className='max-w-6xl x-auto px-4 py-12'>
+        <section className='max-w-6xl x-auto px-4 py-12 text-center'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
                 {/* Left: hero text + prompt card */}
                 <div>

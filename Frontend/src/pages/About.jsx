@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
     return (
-        <section className="max-w-6xl mx-auto px-4 py-12  ">
+        <section className="max-w-6xl mx-auto px-4 py-12 text-center ">
             <h1 className="text-4xl sm:text-5xl nostalgic font-bold text-center mb-12 " >About Vidora</h1>
             <p className="text-slate-300 text-center max-w-2xl mx-auto mb-12" >
                 Vidora is a nostalgic, lightweight AI video generator built entirely
