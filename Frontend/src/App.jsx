@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import './App.css'
 import Gallery from './pages/Gallery'
 import About from './pages/About'
+import Login from './pages/Login'
 import { BrowserRouter, Router, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <main className="grow">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path='/login' element={<Login/>}/>
               <Route path="/gallery" element={<Gallery />} />
               <Route path='/about' element={<About/>} />
             </Routes>

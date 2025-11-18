@@ -44,7 +44,7 @@ function Navbar({ theme, setTheme }) {
                             className='ml-2 inline-flex items-center gap-2 rounded-lg px-3 py-2 bg-slate-800/40 hover:bg-slate-800/60 text-sm'>
                             {theme === "dark" ? "☾ Dark" : "☼ Light"}
                         </button>
-                        <a href="#login" className='text-sm bg-indigo-500 hover:bg-indigo-700 px-3 py-2 rounded-lg text-white'>Login</a>
+                        <a onClick={() => navigate("/login")} className='text-sm bg-indigo-500 hover:bg-indigo-700 px-3 py-2 rounded-lg text-white'>Login</a>
                     </div>
                     {/* Mobile menu button */}
                     <div className='md:hidden flex items-center'>
