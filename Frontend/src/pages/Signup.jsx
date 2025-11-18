@@ -11,21 +11,24 @@ function Signup() {
                 <form className='space-y-4'>
                 
                     <div>
-                        <label className='text-sm font-medium'>Name</label>
+                        <label className='text-sm font-medium  p-2'>Name :</label>
                         <input type="text"
                             className='w-full rounded-xl p-3 bg-white/10 dark:bg-black/30 border border-white/10'
+                            placeholder='Enter your username'
                         />
                     </div>
                     <div>
-                        <label className='text-sm font-medium'>Email</label>
+                        <label className='text-sm font-medium p-2'>Email :</label>
                         <input type="text"
                             className='w-full rounded-xl p-3 bg-white/10 dark:bg-black/30 border border-white/10'
+                            placeholder='Enter your email'
                         />
                     </div>
                     <div>
-                        <label className='text-sm font-medium'>Password</label>
+                        <label className='text-sm font-medium p-2'>Password :</label>
                         <input type="text"
                             className='w-full rounded-xl p-3 bg-white/10 dark:bg-black/30 border border-white/10'
+                            placeholder='Enter password'
                         />
                     </div>
 
@@ -35,7 +38,7 @@ function Signup() {
                 </form>
                 <p className='text-center text-sm mt-6 opacity-80 '>
                     Already have an account?{" "}
-                    <Link to="/login" className='text-purple-700 hover:text-purple-500'>Login</Link>
+                    <Link to="/login" className='text-purple-400 hover:text-purple-500'>Login</Link>
                 </p>
             </div>
 
