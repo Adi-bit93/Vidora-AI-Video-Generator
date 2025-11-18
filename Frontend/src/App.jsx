@@ -4,11 +4,12 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Footer from './components/Footer'
 import './App.css'
-import Gallery from './pages/Gallery'
-import About from './pages/About'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import Player from './pages/Player'
+import Gallery from './pages/Gallery';
+import About from './pages/About';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Player from './pages/Player';
+import PageTransition from './components/PageTransiton';
 
 function App() {
 
@@ -34,29 +35,60 @@ function App() {
 
   return (
     <BrowserRouter>
-      
-        <div className="flex flex-col min-h-screen antialiased">
 
-          <div id="__grain" aria-hidden="true"></div>
+      <div className="flex flex-col min-h-screen antialiased">
 
-          {/* NOW inside Router → useNavigate works */}
-          <Navbar theme={theme} setTheme={setTheme} />
+        <div id="__grain" aria-hidden="true"></div>
 
-          <main className="grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path='/login' element={<Login/>}/>
-              <Route path="/signup" element={<Signup/>}/>
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path='/player' element={<Player/>}/>
-              <Route path='/about' element={<About/>} />
-            </Routes>
-          </main>
+        {/* NOW inside Router → useNavigate works */}
+        <PageTransition>
+        <Navbar theme={theme} setTheme={setTheme} />
+        </PageTransition>
 
-          <Footer />
+        <main className="grow">
+          <Routes>
+            <Route path="/" element={
+              <PageTransition>
+                <Home />
+              </PageTransition>
+              } />
 
-        </div>
-      
+            <Route path='/login' element={
+              <PageTransition>
+                <Login />
+              </PageTransition>
+
+            } />
+
+            <Route path="/signup" element={
+              <PageTransition>
+                <Signup />
+              </PageTransition>
+            } />
+
+            <Route path="/gallery" element={
+              <PageTransition>
+                <Gallery />
+              </PageTransition>
+            } />
+
+            <Route path='/player' element={
+              <PageTransition>
+                <Player />
+              </PageTransition>
+            } />
+            <Route path='/about' element={
+              <PageTransition>
+                <About />
+              </PageTransition>
+            } />
+          </Routes>
+        </main>
+
+        <Footer />
+
+      </div>
+
     </BrowserRouter>
   );
 }

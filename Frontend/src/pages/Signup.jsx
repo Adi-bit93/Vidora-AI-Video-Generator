@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function Signup() {
     return (
-        <div className="min-h-screen flex items-center justify-center px-4 bg-linear-to-b from-background to-background/60">
-            <div className='className="w-full max-w-md backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-xl bg-white/5 dark:bg-black/20"'>
+        <div className="min-h-screen  flex items-center justify-center px-4 bg-linear-to-b from-background to-background/60">
+            <div className='className="w-full max-w-md glow-hover backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-xl bg-white/5 dark:bg-black/20"'>
                 <h1 className="text-3xl font-bold text-center mb-6 tracking-wide">
                     Create Account
                 </h1>

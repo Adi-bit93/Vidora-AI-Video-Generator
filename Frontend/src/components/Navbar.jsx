@@ -27,7 +27,7 @@ function Navbar({ theme, setTheme }) {
     const navigate = useNavigate();
 
     return (
-        <header className='sticky top-0 z-40  bg-transparent backdrop-blur-sm'>
+        <header className='sticky top-0 z-40 glow-hover bg-transparent backdrop-blur-sm'>
             <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <nav className='flex items-center justify-between py-3'>
                     <a href="/" className='flex items-center gap-3'>

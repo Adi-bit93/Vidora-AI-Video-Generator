@@ -26,7 +26,7 @@ export default function Gallery() {
                 {demoClips.map((clip, index) => (
                     <div
                         key={index}
-                        className='relative break-inside-avoid glass rounded-xl overflow-hidden group shadow-soft-lg'
+                        className='relative glow-hover break-inside-avoid glass rounded-xl overflow-hidden group shadow-soft-lg'
                     >
                         <video
                             className='w-full rounded-lg group-hover:scale-[1.03]'

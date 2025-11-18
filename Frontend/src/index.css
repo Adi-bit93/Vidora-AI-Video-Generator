@@ -13,6 +13,36 @@ code, kbd, pre {
   font-family: "Space Mono", monospace;
 }
 
+.glow-hover {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.6),
+              0 0 28px rgba(168, 85, 247, 0.5);
+  transform: translateY(-4px);
+}
+.retro-bg {
+  background: radial-gradient(circle at center,
+    rgba(120, 120, 255, 0.15),
+    transparent 60%
+  );
+  background-size: cover;
+}
+
+.retro-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+
+
 /* Soft background + subtle grain for nostalgia */
 body {
   @apply bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100;

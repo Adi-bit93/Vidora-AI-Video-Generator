@@ -8,14 +8,14 @@ function Player() {
     const videoURL = `/videos/sample${id}.mp4`
   return (
     <div
-        className='min-h-screen px-4 py-10 flex flex-col items-center bg-background'
+        className='min-h-screen  px-4 py-10 flex flex-col items-center bg-background'
     >
        <Link to='/gallery'
             className='mb-6 text-purple-400 hover:text-purple-300 font-semibold'
        >
         ⬅ Back to Gallery
        </Link>
-       <div className='w-full max-w-5xl apsect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black/40 backdrop-blur-xl'>
+       <div className='w-full glow-hover max-w-5xl apsect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black/40 backdrop-blur-xl'>
         <video src={videoURL} 
             controls
             className='w-full h-full object-cover'

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"
 
 function Login() {
   return (
-    <div className='min-h-screen flex items-center justify-center px-4 bg-linear-to-b from-background to-background/60'>
-        <div className='w-full max-w-md backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-xl bg-white/5 dark:bg-black/20'>
+    <div className='min-h-screen  flex items-center justify-center px-4 bg-linear-to-b from-background to-background/60'>
+        <div className='w-full max-w-md glow-hover backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-xl bg-white/5 dark:bg-black/20'>
             <h1 className='font-bold text-3xl text-center mb-6 tracking-wide'>
                 Welcome Back 
             </h1>
