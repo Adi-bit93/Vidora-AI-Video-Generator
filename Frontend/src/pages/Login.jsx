@@ -9,17 +9,19 @@ function Login() {
             <h1 className='font-bold text-3xl text-center mb-6 tracking-wide'>
                 Welcome Back 
             </h1>
-            <form action="">
+            <form className='space-y-3'>
                 <div>
-                    <label className='text-sm font-medium' > Email</label>
+                    <label className='text-sm font-medium p-2' >Email :</label>
                     <input type="email" 
                         className='w-full p-3 rounded-xl bg-white/10 dark:bg-clack/30 border border-white/10 focus:outline-none'
+                        placeholder='Enter your email'
                     />
                 </div>
                 <div>
-                    <label className='text-sm font-medium' > Password</label>
+                    <label className='text-sm font-medium p-2' > Password :</label>
                     <input type="password" 
                         className='w-full p-3 rounded-xl bg-white/10 dark:bg-clack/30 border border-white/10 focus:outline-none'
+                        placeholder='Enter your password'
                     />
                 </div>
                 <button 
