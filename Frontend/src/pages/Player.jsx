@@ -1,11 +1,13 @@
 import React from 'react'
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 
 
 function Player() {
     const {id} = useParams();
+    const location = useLocation();
+    const videoUrl = location.state?.videoUrl;
 
-    const videoURL = `/videos/sample${id}.mp4`
+    // const videoURL = `/videos/sample${id}.mp4`
   return (
     <div
         className='min-h-screen  px-4 py-10 flex flex-col items-center bg-background'
@@ -15,10 +17,11 @@ function Player() {
        >
         ⬅ Back to Gallery
        </Link>
-       <div className='w-full glow-hover max-w-5xl apsect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black/40 backdrop-blur-xl'>
-        <video src={videoURL} 
+       <div className='w-full  max-w-5xl apsect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black/40 backdrop-blur-xl'>
+        <video src={videoUrl} 
             controls
-            className='w-full h-full object-cover'
+            autoPlay
+            className='w-full h-auto object-cover'
         ></video>
        </div>
        <h2>Watching Clip</h2>

@@ -5,12 +5,12 @@ export default function Gallery() {
     const navigate = useNavigate()
 
     const demoClips = [
-        "/videos/blog-1.mp4",
-        "/videos/blog-2.mp4",
-        "/videos/blog-7.mp4",
-        "/videos/blog-4.mp4",
-        "/videos/blog-5.mp4",
-        "/videos/blog-6.mp4",
+        {id: 1, title: "Clip 1", url: "/videos/blog-1.mp4"},
+        {id: 2, title: "Clip 2", url: "/videos/blog-2.mp4"},
+        {id: 3, title: "Clip 3", url: "/videos/blog-7.mp4"},
+        {id: 4, title: "Clip 4", url: "/videos/blog-4.mp4"},
+        {id: 5, title: "Clip 5", url: "/videos/blog-5.mp4"},
+        {id: 6, title: "Clip 6", url: "/videos/blog-6.mp4"},
     ];
 
     return (
@@ -30,14 +30,14 @@ export default function Gallery() {
                     >
                         <video
                             className='w-full rounded-lg group-hover:scale-[1.03]'
-                            src={clip}
+                            src={clip.url}
                             autoPlay
                             loop
                             muted
                         />
                         <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center'>
                             <button 
-                                onClick={() => navigate("/player")}
+                                onClick={() => navigate("/player", { state: { videoUrl: clip.url } })}
                                 className='px-4 py-2 text-sm font-semibold text-white bg-indigo-600/80  rounded-lg hover:bg-indigo-700 transition'>
                              View Clip
                             </button>
