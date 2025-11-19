@@ -13,25 +13,25 @@ import PageTransition from './components/PageTransiton';
 
 function App() {
 
-  const [theme, setTheme] = useState(() => {
-    try {
-      return localStorage.getItem("theme") || "dark";
-    } catch {
-      return "dark";
-    }
-  })
+  // const [theme, setTheme] = useState(() => {
+  //   try {
+  //     return localStorage.getItem("theme") || "dark";
+  //   } catch {
+  //     return "dark";
+  //   }
+  // })
 
-  useEffect(() => {
-    const root = document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-    try {
-      localStorage.setItem("theme", theme);
-    } catch { }
-  }, [theme]);
+  // useEffect(() => {
+  //   const root = document.documentElement;
+  //   if (theme === 'dark') {
+  //     root.classList.add("dark");
+  //   } else {
+  //     root.classList.remove("dark");
+  //   }
+  //   try {
+  //     localStorage.setItem("theme", theme);
+  //   } catch { }
+  // }, [theme]);
 
   return (
     <BrowserRouter>
@@ -42,7 +42,7 @@ function App() {
 
         {/* NOW inside Router → useNavigate works */}
         <PageTransition>
-        <Navbar theme={theme} setTheme={setTheme} />
+        <Navbar/>
         </PageTransition>
 
         <main className="grow">

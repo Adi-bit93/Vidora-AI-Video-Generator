@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import FadeIn from './FadIn';
+import { useTheme } from '../context/ThemeContext';
 
 
 
@@ -22,10 +23,11 @@ function Logo() {
 }
 
 
-function Navbar({ theme, setTheme }) {
+function Navbar() {
     const [open, setOpen] = useState(false);
 
     const navigate = useNavigate();
+    const {theme, toggleTheme } = useTheme();
 
     return (
         <FadeIn delay={0.2}>
@@ -41,7 +43,7 @@ function Navbar({ theme, setTheme }) {
                                 onClick={() => navigate('/Gallery')}
                                 className='text-sm text-slate-200 hover:text-white hover:cursor-pointer'>Gallery</a>
                             <a onClick={() => navigate("/about")} className='text-sm text-slate-200 hover:text-white hover:cursor-pointer'>About</a>
-                            <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                            <button onClick={toggleTheme}
                                 aria-label='Toggle theme'
                                 className='ml-2 inline-flex items-center gap-2 rounded-lg px-3 py-2 bg-slate-800/40 hover:bg-slate-800/60 text-sm'>
                                 {theme === "dark" ? "☾ Dark" : "☼ Light"}
