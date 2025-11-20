@@ -24,7 +24,7 @@ export default defineConfig({
                 300: '#c7d2fe',
                 500: '#7c3aed',
                 700: '#4c1d95',
-              },
+              }
             },
             backgroundImage: {
               grain: 'radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px)',
