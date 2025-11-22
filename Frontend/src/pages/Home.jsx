@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Loader2 } from 'lucide-react';
+import { notifyError, notifyInfo, notifySuccess } from '../utils/toast';
 
 /**
  * Home.jsx
@@ -16,7 +17,12 @@ export default function Home() {
     const [example, setExample] = useState("A cat playing piano at sunset")
 
     const handleGenerate = () =>{
-        if(!prompt.trim()) setPrompt(example)
+        if(!prompt.trim()){
+            notifyError("Please write a prompt first! Using example prompt instead.")
+            setPrompt(example)
+        } else{
+            notifyInfo("Generating your video...");
+        }
 
         setLoading(true);
         setGeneratedVideo(null);

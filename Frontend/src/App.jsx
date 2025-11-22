@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Toaster } from 'react-hot-toast';
 import { BrowserRouter, Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
@@ -34,62 +35,80 @@ function App() {
   // }, [theme]);
 
   return (
-    <BrowserRouter>
 
-      <div className="flex flex-col min-h-screen antialiased">
+    <div className='min-h-screen bg-background text-foreground'>
+      <Toaster 
+        position='top-center'
+        toastOptions={{
+          style: {
+            background: "var(--color-card)",
+            color: "var(--color-text)",
+            borderRadius: "8px",
+            border: "1px solid var(--color-border)",
+            padding: "12px 16px",
+          }
+        }}
+      />
 
-        <div id="__grain" aria-hidden="true"></div>
 
-        {/* NOW inside Router → useNavigate works */}
-        <PageTransition>
-        <Navbar/>
-        </PageTransition>
+      <BrowserRouter>
 
-        <main className="grow">
-          <Routes>
-            <Route path="/" element={
-              <PageTransition>
-                <Home />
-              </PageTransition>
+        <div className="flex flex-col min-h-screen antialiased">
+
+          <div id="__grain" aria-hidden="true"></div>
+
+          {/* NOW inside Router → useNavigate works */}
+          <PageTransition>
+            <Navbar />
+          </PageTransition>
+
+          <main className="grow">
+            <Routes>
+              <Route path="/" element={
+                <PageTransition>
+                  <Home />
+                </PageTransition>
               } />
 
-            <Route path='/login' element={
-              <PageTransition>
-                <Login />
-              </PageTransition>
+              <Route path='/login' element={
+                <PageTransition>
+                  <Login />
+                </PageTransition>
 
-            } />
+              } />
 
-            <Route path="/signup" element={
-              <PageTransition>
-                <Signup />
-              </PageTransition>
-            } />
+              <Route path="/signup" element={
+                <PageTransition>
+                  <Signup />
+                </PageTransition>
+              } />
 
-            <Route path="/gallery" element={
-              <PageTransition>
-                <Gallery />
-              </PageTransition>
-            } />
+              <Route path="/gallery" element={
+                <PageTransition>
+                  <Gallery />
+                </PageTransition>
+              } />
 
-            <Route path='/player' element={
-              <PageTransition>
-                <Player />
-              </PageTransition>
-            } />
-            <Route path='/about' element={
-              <PageTransition>
-                <About />
-              </PageTransition>
-            } />
-          </Routes>
-        </main>
+              <Route path='/player' element={
+                <PageTransition>
+                  <Player />
+                </PageTransition>
+              } />
+              <Route path='/about' element={
+                <PageTransition>
+                  <About />
+                </PageTransition>
+              } />
+            </Routes>
+          </main>
 
-        <Footer />
+          <Footer />
 
-      </div>
+        </div>
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
+
   );
 }
 
