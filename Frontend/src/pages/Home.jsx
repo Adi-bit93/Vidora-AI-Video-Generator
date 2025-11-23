@@ -15,7 +15,7 @@ export default function Home() {
     const [loading, setLoading] = useState(false)
 
     const [generatedVideo, setGeneratedVideo] = useState(null)
-    const [example, setExample] = useState("A cat playing piano at sunset")
+    const [example, setExample] = useState("Enter your prompt")
 
     const handleGenerate = () => {
         if (!prompt.trim()) {
