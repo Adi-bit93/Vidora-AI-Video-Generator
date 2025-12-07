@@ -50,7 +50,7 @@ export const registerUser = asyncHandler(async(req, res, next) => {
 })
 
 
-export const login = asyncHandler(async(req, res, next) => {
+export const loginUser = asyncHandler(async(req, res, next) => {
    try {
      const {email, password } = req.body;
  
