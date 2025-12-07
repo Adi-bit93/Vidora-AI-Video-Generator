@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
@@ -22,6 +22,7 @@ app.use("/api/auth", authRoutes)
 
 app.get("/", (req, res) => {
     res.json({ success: true, message:"Backend is running 🚀"})
+    
 })
 
 export default app;

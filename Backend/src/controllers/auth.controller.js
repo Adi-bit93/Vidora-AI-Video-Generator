@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 import { generateToken } from "../utils/generateToken.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
-export const registerUser = asyncHandler(async(req, res, next) => {
+const registerUser = asyncHandler(async(req, res, next) => {
     try {
         const {username, email, password} = req.body;
     
@@ -49,8 +49,7 @@ export const registerUser = asyncHandler(async(req, res, next) => {
 
 })
 
-
-export const loginUser = asyncHandler(async(req, res, next) => {
+const loginUser = asyncHandler(async(req, res, next) => {
    try {
      const {email, password } = req.body;
  
@@ -92,4 +91,9 @@ export const loginUser = asyncHandler(async(req, res, next) => {
    }
 
 })
+
+export {
+    registerUser,
+    loginUser
+}
 
