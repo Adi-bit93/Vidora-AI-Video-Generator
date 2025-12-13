@@ -92,14 +92,14 @@ const loginUser = asyncHandler(async(req, res, next) => {
 
 })
 
-const getProfile = async (res, req) => {
-    return res.status(201).json({
+const getProfile = async (req, res) => {
+    return res.status(200).json({
         success: true,
         user: req.user
     })
 };
 
-const logoutUser = async (res, req) => {
+const logoutUser = async (req, res) => {
     return res
         .status(200)
         .cookie("token", "", {

@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
     {
-        name: {
+        username: {
             type: String,
-            required: [true, "Name is required"],
+            required: [true, "username is required"],
             minlength: 2
         },
         email: {
