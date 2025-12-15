@@ -3,6 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import authRoutes from './routes/auth.routes.js'
+import videoRoutes from './routes/video.routes.js'
 
 const app = express()
 
@@ -19,6 +20,7 @@ app.use(
 )
 
 app.use("/api/auth", authRoutes)
+app.use("/api/video", videoRoutes)
 
 app.get("/", (req, res) => {
     res.json({ success: true, message:"Backend is running 🚀"})
