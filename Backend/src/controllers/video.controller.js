@@ -1,4 +1,5 @@
 import cloudinary from "../config/cloudinary.js";
+import Video from "../models/Video.js";
 
 export const uploadVideo = async (req, res, next) => {
     try {
@@ -25,5 +26,29 @@ export const uploadVideo = async (req, res, next) => {
         uploadResults.end(req.file.buffer)
     } catch (error) {
         next(error);
+    }
+}
+
+export const saveVideo = async (req, res, next) => {
+    try {
+        const {prompt, videoUrl, publicId, duration } = req.body
+        if (!prompt || !videoUrl || !publicId) {
+            return res.status(400).json({message: "Missing required fields "});
+        }
+
+        const video = await Video.create({
+            user: req.user._id,
+            prompt,
+            videoUrl, 
+            publicId,
+            duration
+        });
+
+        return res.status(201).json({
+            success: true,
+            video,
+        });
+    } catch (error) {
+        next(error)
     }
 }
