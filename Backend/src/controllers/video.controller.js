@@ -64,3 +64,24 @@ export const getMyVideos = async (req, res, next) => {
         next(error);
     }
 }
+
+export const getVideoById = async (req, res, next) => {
+    try {
+        const video = await Video.findById(req.params._id).populate(
+            "user",
+            "username email"
+        )
+
+        if (!video) {
+            return res.status(400).json({ message: "Video not found" })
+        }
+
+        return res.status(200).json({
+            success: true,
+            video
+        })
+
+    } catch (error) {
+        next(error)
+    }
+}
