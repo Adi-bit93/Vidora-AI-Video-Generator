@@ -31,15 +31,15 @@ export const uploadVideo = async (req, res, next) => {
 
 export const saveVideo = async (req, res, next) => {
     try {
-        const {prompt, videoUrl, publicId, duration } = req.body
+        const { prompt, videoUrl, publicId, duration } = req.body
         if (!prompt || !videoUrl || !publicId) {
-            return res.status(400).json({message: "Missing required fields "});
+            return res.status(400).json({ message: "Missing required fields " });
         }
 
         const video = await Video.create({
             user: req.user._id,
             prompt,
-            videoUrl, 
+            videoUrl,
             publicId,
             duration
         });
@@ -50,5 +50,17 @@ export const saveVideo = async (req, res, next) => {
         });
     } catch (error) {
         next(error)
+    }
+}
+
+export const getMyVideos = async (req, res, next) => {
+    try {
+        const videos = (await Video.find(
+            {
+                user: req.user._id
+            }
+        )).sort({ createdAt: -1 });
+    } catch (error) {
+        next(error);
     }
 }
