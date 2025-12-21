@@ -55,11 +55,15 @@ export const saveVideo = async (req, res, next) => {
 
 export const getMyVideos = async (req, res, next) => {
     try {
-        const videos = (await Video.find(
+        const videos = await Video.find((
             {
                 user: req.user._id
             }
         )).sort({ createdAt: -1 });
+        return res.status(201).json({
+            success: true,
+            videos
+        })
     } catch (error) {
         next(error);
     }
