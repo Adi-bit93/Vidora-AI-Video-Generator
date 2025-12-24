@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { notifyError, notifyInfo, notifySuccess } from '../utils/toast';
 import SEO from '../components/SEO';
+import { createJob, getJobStatus } from '../services/jobService.js';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * Home.jsx
@@ -17,21 +19,45 @@ export default function Home() {
     const [generatedVideo, setGeneratedVideo] = useState(null)
     const [example, setExample] = useState("Enter your prompt")
 
-    const handleGenerate = () => {
+    const navigate = useNavigate();
+
+    const handleGenerate = async () => {
         if (!prompt.trim()) {
-            notifyError("Please write a prompt first! Using example prompt instead.")
-            setPrompt(example)
-        } else {
-            notifyInfo("Generating your video...");
+            notifyError("Please enter a prompt")
+            return;
         }
 
-        setLoading(true);
-        setGeneratedVideo(null);
+        try {
+            setLoading(true);
+            notifyInfo("Starting generation...");
 
-        setTimeout(() => {
+            const res = await createJob(prompt)
+            const jobId = res.jobId;
+
+            const interval = setInterval(async () => {
+                const statusRes = await getJobStatus(jobId);
+                const job = statusRes.job;
+
+                if (jobId.status === "failed") {
+                    clearInterval(interval);
+                    setLoading(false);
+                    notifySuccess("Video generated successfully!");
+
+                    navigate(`/video/${job.videoId._id}`);
+                }
+
+                if (job.status === "failed") {
+                    clearInterval(interval);
+                    setLoading(false);
+                    notifyError("Generation failed");
+                }
+
+            }, 2000);
+
+        } catch (error) {
             setLoading(false);
-            setGeneratedVideo("/demo-video.mp4");
-        }, 2000);
+            notifyError("Something went wrong")
+        }
     }
 
     return (
