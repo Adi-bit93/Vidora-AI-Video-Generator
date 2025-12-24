@@ -22,7 +22,7 @@ app.use(
 )
 
 app.use("/api/auth", authRoutes)
-app.use("/api/video", videoRoutes)
+app.use("/api/videos", videoRoutes)
 app.use("/api/jobs", jobRoutes)
 
 app.get("/", (req, res) => {

@@ -38,10 +38,10 @@ export default function Home() {
                 const statusRes = await getJobStatus(jobId);
                 const job = statusRes.job;
 
-                if (jobId.status === "failed") {
+                if (jobId.status === "completed") {
                     clearInterval(interval);
                     setLoading(false);
-                    notifySuccess("Video generated successfully!");
+                    notifySuccess("Video generated 🎬 successfully!");
 
                     navigate(`/video/${job.videoId._id}`);
                 }
