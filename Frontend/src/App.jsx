@@ -89,7 +89,7 @@ function App() {
                 </PageTransition>
               } />
 
-              <Route path='/player' element={
+              <Route path='/player/:id' element={
                 <PageTransition>
                   <Player />
                 </PageTransition>

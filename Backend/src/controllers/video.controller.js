@@ -71,7 +71,7 @@ export const getMyVideos = async (req, res, next) => {
 
 export const getVideoById = async (req, res, next) => {
     try {
-        const video = await Video.findById(req.params._id).populate(
+        const video = await Video.findById(req.params.id).populate(
             "user",
             "username email"
         )

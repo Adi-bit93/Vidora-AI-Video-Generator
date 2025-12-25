@@ -11,14 +11,22 @@ function Player() {
 
   const [video, setVideo] = useState(null);
   useEffect(() => {
-    apiRequest.get(`/api/videos/${id}`).then((res) => {
-      setVideo(res.data.video)
-    })
-  }, [id]);
+    const fetchVideo = async () => {
+      try {
+        const data = await apiRequest(`/api/videos/${id}`);
+        setVideo(data.video);
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    fetchVideo();
+  }, [id])
 
   if (!video) {
     return <p className="text-center text-slate-300 mt-20">Loading video...</p>;
   }
+
+
 
 
   // const videoURL = `/videos/sample${id}.mp4`

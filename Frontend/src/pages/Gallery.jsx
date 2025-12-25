@@ -37,7 +37,7 @@ export default function Gallery() {
                         />
                         <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center'>
                             <button 
-                                onClick={() => navigate("/player", { state: { videoUrl: clip.url } })}
+                                onClick={() => navigate("/player/:id", { state: { videoUrl: clip.url } })}
                                 className='px-4 py-2 text-sm font-semibold text-white bg-indigo-600/80  rounded-lg hover:bg-indigo-700 transition'>
                              View Clip
                             </button>
